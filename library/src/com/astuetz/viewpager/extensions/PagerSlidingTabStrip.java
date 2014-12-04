@@ -145,9 +145,11 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 		underlineColor = a.getColor(R.styleable.PagerSlidingTabStrip_underlineColor, underlineColor);
 		dividerColor = a.getColor(R.styleable.PagerSlidingTabStrip_dividerColor, dividerColor);
 		tabTextSelectedColor = a.getColor(R.styleable.PagerSlidingTabStrip_pstsTextSelectedColor, tabTextColor);
+		tabTextSize = a.getDimensionPixelSize(R.styleable.PagerSlidingTabStrip_pstsTextSize, tabTextSize);
 		indicatorHeight = a.getDimensionPixelSize(R.styleable.PagerSlidingTabStrip_indicatorHeight, indicatorHeight);
 		underlineHeight = a.getDimensionPixelSize(R.styleable.PagerSlidingTabStrip_underlineHeight, underlineHeight);
 		dividerPadding = a.getDimensionPixelSize(R.styleable.PagerSlidingTabStrip_dividerPadding, dividerPadding);
+		dividerWidth = a.getDimensionPixelSize(R.styleable.PagerSlidingTabStrip_pstsDividerWidth, dividerWidth);
 		tabPadding = a.getDimensionPixelSize(R.styleable.PagerSlidingTabStrip_tabPaddingLeftRight, tabPadding);
 		tabBackgroundResId = a.getResourceId(R.styleable.PagerSlidingTabStrip_tabBackground, tabBackgroundResId);
 		shouldExpand = a.getBoolean(R.styleable.PagerSlidingTabStrip_shouldExpand, shouldExpand);
@@ -265,11 +267,12 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 	}
 
 	private void updateTabStyles() {
-
+		int tabSelectedIndex = -1;
 		for (int i = 0; i < tabCount; i++) {
 
 			View v = tabsContainer.getChildAt(i);
-
+			LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.MATCH_PARENT);
+			layoutParams.weight = 1;
 			v.setLayoutParams(defaultTabLayoutParams);
 			v.setBackgroundResource(tabBackgroundResId);
 			if (shouldExpand) {
@@ -279,11 +282,11 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 			}
 
 			if (v instanceof TextView) {
-
+				tabSelectedIndex++;
 				TextView tab = (TextView) v;
 				tab.setTextSize(TypedValue.COMPLEX_UNIT_PX, tabTextSize);
 				tab.setTypeface(tabTypeface, tabTypefaceStyle);
-				if (i == currentPosition){
+				if (tabSelectedIndex == currentPosition){
 					tab.setTextColor(tabTextSelectedColor);
 				} else {
 					tab.setTextColor(tabTextColor);
