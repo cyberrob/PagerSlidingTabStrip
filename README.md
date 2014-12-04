@@ -1,4 +1,7 @@
+Standing on the shoulders of giants.
+
 Android PagerSlidingTabStrip
+
 ============================
 
 Interactive paging indicator widget, compatible with the `ViewPager` from the 
