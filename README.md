@@ -17,9 +17,22 @@ Usage
      adjacent to the `ViewPager` it represents.
 
         <com.astuetz.viewpager.extensions.PagerSlidingTabStrip
-            android:id="@+id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="48dip" />
+        android:id="@+id/home_content_tab_nav"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/color_psts_tab_bg"
+        app:pstsDividerColor="@color/color_psts_divider"
+        app:pstsDividerWidth="0.5dp"
+        app:pstsIndicatorColor="@color/color_psts_indicator"
+        app:pstsIndicatorHeight="6dp"
+        app:pstsScrollOffset="5dp"
+        app:pstsShouldExpand="false"
+        app:pstsTextSelectedColor="@color/color_psts_text_selected"
+        app:pstsTextSize="17sp"
+        app:pstsUnderlineColor="@color/color_psts_underline"
+        app:pstsUnderlineHeight="2dp" />
 
   2. In your `onCreate` method (or `onCreateView` for a fragment), bind the
      widget to the `ViewPager`.
