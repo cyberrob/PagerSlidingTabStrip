@@ -420,6 +420,8 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 				scrollToChild(pager.getCurrentItem(), 0);
 			}
 
+			updateTabStyles();	
+
 			if (delegatePageListener != null) {
 				delegatePageListener.onPageScrollStateChanged(state);
 			}
