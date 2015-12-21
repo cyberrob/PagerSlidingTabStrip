@@ -42,6 +42,7 @@
         android:layout_toRightOf="@+id/center"
         android:background="@drawable/background_tabs_diagonal"
         app:dividerColor="#00000000"
+        app:pstsTextSelectedColor="#FF33B5E6"
         app:indicatorColor="#FF33B5E6"
         app:tabPaddingLeftRight="14dip"
         app:underlineColor="#FF33B5E6" />

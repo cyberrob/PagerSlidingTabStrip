@@ -65,6 +65,12 @@ Credits
 
  * [Kirill Grouchnikov][1] - Author of [an explanation post on Google+][2]
 
+Updates
+-------
+* Fix the issue of tab text not changed to selected state color
+* Update samples/ with the new `pstsTextSelectedColor` attribute to show Tab text color DOES change when tab switched.
+* Update gradle version to `com.android.tools.build:gradle:1.5.0` 
+* Update android build tool version from `17` to `19` 
 
 License
 =======
